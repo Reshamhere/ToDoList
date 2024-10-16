@@ -26,9 +26,13 @@ struct LoginView: View {
                         .textFieldStyle(DefaultTextFieldStyle())
                         .autocapitalization(.none)
                     
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(.red)
+                    }
                     
                     TLButton(title: "Log in", background: .blue){
-//                        attempt log in
+                        viewModel.login()
                     }
                     
                 }
