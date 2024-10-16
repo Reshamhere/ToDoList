@@ -30,6 +30,7 @@
 		50FF2AC92CC0018200765400 /* ToDoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF2AC82CC0018200765400 /* ToDoListItemViewViewModel.swift */; };
 		50FF2ACB2CC00BBA00765400 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF2ACA2CC00BBA00765400 /* HeaderView.swift */; };
 		50FF2ACD2CC03AF100765400 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF2ACC2CC03AF100765400 /* LoginView.swift */; };
+		50FF2ACF2CC0500400765400 /* TLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF2ACE2CC0500400765400 /* TLButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		50FF2AC82CC0018200765400 /* ToDoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewViewModel.swift; sourceTree = "<group>"; };
 		50FF2ACA2CC00BBA00765400 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		50FF2ACC2CC03AF100765400 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		50FF2ACE2CC0500400765400 /* TLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				50FF2AB42CBFFF5E00765400 /* RegisterView.swift */,
 				50FF2AB62CBFFF9A00765400 /* ToDoListItemView.swift */,
 				50FF2ACA2CC00BBA00765400 /* HeaderView.swift */,
+				50FF2ACE2CC0500400765400 /* TLButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				509C88192CBD5F8D00894F1F /* ContentView.swift in Sources */,
 				50FF2AAF2CBFFF1600765400 /* ToDoListView.swift in Sources */,
 				50FF2ABF2CC0012200765400 /* ProfileViewViewModel.swift in Sources */,
+				50FF2ACF2CC0500400765400 /* TLButton.swift in Sources */,
 				50FF2AB52CBFFF5E00765400 /* RegisterView.swift in Sources */,
 				509C884B2CBED79200894F1F /* ProfileView.swift in Sources */,
 				50FF2AB92CBFFFD500765400 /* User.swift in Sources */,

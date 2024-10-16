@@ -8,41 +8,38 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email = ""
-    @State var password = ""
+    @StateObject var viewModel = LoginViewViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
 //            Header
-                HeaderView()
+                HeaderView(title: "To Do List", subtitle: "Get things done", angle: 15, background: .pink)
                 
 //            Login Form
                 Form {
-                    TextField("Email address", text: $email)
+                    TextField("Email address", text: $viewModel.email)
                         .textFieldStyle(DefaultTextFieldStyle())
-                    SecureField("Email address", text: $email)
-                        .textFieldStyle(DefaultTextFieldStyle())
+                        .autocapitalization(.none)
                     
-                    Button {
-//                    Attempt log in
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.blue)
-                            
-                            Text("Log in")
-                                .foregroundColor(.white)
-                                .bold()
-                        }
+                    SecureField("Password", text: $viewModel.password)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                        .autocapitalization(.none)
+                    
+                    
+                    TLButton(title: "Log in", background: .blue){
+//                        attempt log in
                     }
+                    
                 }
+                .offset(y: -50)
                 
 //            Create Account
                 VStack {
                     Text("New around here?")
                     NavigationLink("Create An Account", destination: RegisterView())
                 }
-                .padding(.bottom, 70)
+                .padding(.bottom, 80)
                 
                 Spacer()
                 
