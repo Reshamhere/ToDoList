@@ -10,4 +10,8 @@ import Foundation
 // View Model for single to do list item view (each row in items list)
 class ToDoListItemViewViewModel: ObservableObject {
     init() {}
+    
+    func toggleIsDone(item: TodoListItem) {
+        
+    }
 }
