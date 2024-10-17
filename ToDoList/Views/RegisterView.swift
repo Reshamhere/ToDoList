@@ -29,7 +29,7 @@ struct RegisterView: View {
                 .autocapitalization(.none)
             
             TLButton(title: "Create Account", background: .green){
-//                 attempt registration
+                viewModel.register()
             }
         }
         .offset(y: -50)
