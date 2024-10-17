@@ -9,12 +9,14 @@ import SwiftUI
 
 struct NewItemView: View {
     @StateObject var viewModel = NewItemViewViewModel()
+    @Binding var newItemPresented: Bool
     
     var body: some View {
         VStack {
             Text("New item")
                 .font(.system(size: 32))
                 .bold()
+                .padding(.top, 70)
             Form {
                 // Title
                 TextField("Title", text: $viewModel.title)
@@ -27,6 +29,7 @@ struct NewItemView: View {
                 // Button
                 TLButton(title: "Save", background: .pink) {
                     viewModel.save()
+                    newItemPresented = false
                 }
                 .padding()
             }
@@ -35,5 +38,9 @@ struct NewItemView: View {
 }
 
 #Preview {
-    NewItemView()
+    NewItemView(newItemPresented: Binding(get: {
+        return true
+    }, set: { _ in
+        
+    }))
 }
