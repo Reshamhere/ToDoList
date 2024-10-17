@@ -13,6 +13,7 @@ class RegisterViewViewModel: ObservableObject {
     @Published var name = ""
     @Published var email = ""
     @Published var password = ""
+    @Published var errorMessage = ""
     
     init() {}
     
@@ -44,9 +45,12 @@ class RegisterViewViewModel: ObservableObject {
     }
     
     private func validate() -> Bool {
+        errorMessage = ""
         guard !name.trimmingCharacters(in: .whitespaces).isEmpty,
               !email.trimmingCharacters(in: .whitespaces).isEmpty,
-              !password.trimmingCharacters(in: .whitespaces).isEmpty else {
+              !password.trimmingCharacters(in: .whitespaces).isEmpty 
+        else {
+            errorMessage = "Please fill in all details."
             return false
         }
         
@@ -54,6 +58,7 @@ class RegisterViewViewModel: ObservableObject {
             return false
         }
         guard password.count >= 6 else {
+            errorMessage = "Password length must be starting from 6 characters."
             return false
         }
          

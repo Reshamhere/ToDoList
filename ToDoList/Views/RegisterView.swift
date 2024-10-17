@@ -28,6 +28,11 @@ struct RegisterView: View {
                 .textFieldStyle(DefaultTextFieldStyle())
                 .autocapitalization(.none)
             
+            if !viewModel.errorMessage.isEmpty {
+                Text(viewModel.errorMessage)
+                    .foregroundColor(.red)
+            }
+            
             TLButton(title: "Create Account", background: .green){
                 viewModel.register()
             }
