@@ -40,7 +40,7 @@ class RegisterViewViewModel: ObservableObject {
 //        records are stored in collections and documents
         db.collection("users")
             .document(id)
-            .setData(["name": name])
+            .setData(newUser.asDictionary()) // we have to pass a dictionary in there
     }
     
     private func validate() -> Bool {
