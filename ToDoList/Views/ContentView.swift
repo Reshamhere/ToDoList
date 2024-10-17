@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = ContentViewViewModel()
+    
     var body: some View {
 //        Navigation view will allow us to show and dismiss registration view if we need to
         
-        LoginView()
+        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
+            // signed in
+            ToDoListView()
+        } else {
+            LoginView()
+        }
 
     }
 }
