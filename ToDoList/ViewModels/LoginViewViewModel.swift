@@ -19,6 +19,12 @@ class LoginViewViewModel: ObservableObject {
         guard validate() else {
             return // if we are not able to validate, we're gonna stop
         }
+        
+//        Try log in
+        Auth.auth().signIn(withEmail: email, password: password)
+//        Auth.auth() : gives us a reference to firebase authentication
+        
+        
     }
     
     private func validate() -> Bool{
