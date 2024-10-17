@@ -5,6 +5,7 @@
 //  Created by Resham on 16/10/24.
 //
 
+import FirebaseFirestore
 import FirebaseAuth
 import Foundation
 
@@ -20,13 +21,26 @@ class RegisterViewViewModel: ObservableObject {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             guard let userID = result?.user.uid else {
                 return
             }
-//            1.07.29rf6
+            
+            self?.insertUserRecord(id: userID)
         }
+    }
+    
+    private func insertUserRecord(id: String) {
+        let newUser = User(id: id,
+                           name: name,
+                           email: email,
+                           joined: Date().timeIntervalSince1970)
         
+        let db = Firestore.firestore()
+//        records are stored in collections and documents
+        db.collection("users")
+            .document(id)
+            .setData(["name": name])
     }
     
     private func validate() -> Bool {
