@@ -14,21 +14,26 @@ struct ContentView: View {
 //        Navigation view will allow us to show and dismiss registration view if we need to
         
         if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
-            // signed in
-            TabView {
-                ToDoListView()
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                ProfileView()
-                    .tabItem {
-                        Label("Profile", systemImage: "person.circle")
-                    }
-            }
+            accountView
+            
         } else {
             LoginView()
         }
 
+    } // end of body
+    
+    @ViewBuilder
+    var accountView: some View {
+        TabView {
+            ToDoListView(userId: viewModel.currentUserId)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person.circle")
+                }
+        }
     }
 }
 
