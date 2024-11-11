@@ -15,9 +15,10 @@ Welcome to the TodoList App! This iOS application, built using **SwiftUI** and *
   - Logout option for secure session termination
 
 ## Screenshots
-To enhance the visual appeal and understanding of this readme, please add screenshots of your app as described below:
+
 - **Launch Screen, Login Page & Registration Page:**
   ![1](https://github.com/user-attachments/assets/457e17aa-314f-459b-b2e6-4cb89473032d)
+  
 - **Home Page, Add new item and Profile Page:**
   ![2](https://github.com/user-attachments/assets/02ab4547-1ed3-452c-bcf8-6784b6e27c98)
 
